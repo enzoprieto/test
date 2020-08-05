@@ -18,11 +18,12 @@ public class AdnService {
 				throw new Exception("La cadena de adn esta vacia");
 			}
 		Integer acumulador = adn[0].length();
-		;
+		
 		for (int i = 0; i < adn.length; i++) {
 
 			if (acumulador < adn[i].length() || acumulador > adn[i].length()) {
-				throw new Exception("La cadena: " + i + 1 + " No tiene el mismo largo que el resto.");
+
+				throw new Exception("La cadena: " + i + " No tiene el mismo largo que el resto.");
 			}
 			acumulador = adn[i].length();
 			for (int z = 0; z < adn[i].length(); z++) {
