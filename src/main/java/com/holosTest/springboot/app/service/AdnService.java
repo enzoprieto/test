@@ -12,11 +12,15 @@ public class AdnService {
 	@Autowired
 	private DnaRepository dnaRepository;
 
-	public void validarCaracteres (String adn[]) throws Exception {
+	public void validarCaracteres(String adn[]) throws Exception {
 		String caracter;
-		Integer acumulador = adn[0].length();;
+			if (adn.length == 0) {
+				throw new Exception("La cadena de adn esta vacia");
+			}
+		Integer acumulador = adn[0].length();
+		;
 		for (int i = 0; i < adn.length; i++) {
-			
+
 			if (acumulador < adn[i].length() || acumulador > adn[i].length()) {
 				throw new Exception("La cadena: " + i + 1 + " No tiene el mismo largo que el resto.");
 			}

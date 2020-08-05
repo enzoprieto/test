@@ -1,5 +1,5 @@
-
 <!DOCTYPE html>
+
 <html xmlns:th="http://www.thymleaf.org">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
@@ -7,14 +7,12 @@
 	crossorigin="anonymous">
 
 
-<body>
 
 	<nav class="navbar navbar-light bg-dark">
 		<a class="navbar-brand text-white pb-2" href="#">Holos Technology
 			Test</a> <a type="button" class="btn btn-info" th:href="@{/stats}"
 			th:text="Stats"></a>
 	</nav>
-
 
 
 	<div class="row">
@@ -26,7 +24,8 @@
 
 			<form th:action="@{/ismutant}" method="GET">
 				<input type="text" class="form-control"
-					placeholder="Ingrese la cadena de ADN separada por comas" name="dna" />
+					placeholder="Ingrese la cadena de ADN separada por comas"
+					name="dna" />
 
 				<button type="submit" class="btn btn-info float-right mt-2">Enviar</button>
 			</form>
