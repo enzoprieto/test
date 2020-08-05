@@ -1,7 +1,7 @@
 # 1 - Clonar Proyecto. 
 # 2 - Modificar Application Properties con acceso a base de datos.
-# 3 - Clonar Proyecto! 
-# 4 - Ranear Proyecto! 
+# 4 - Importar como Existing maven project!!
+# 5 - Run.
 
 # Urls: 
 # http://localhost:8080/ 
