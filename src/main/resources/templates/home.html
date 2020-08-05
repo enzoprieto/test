@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+	integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+	crossorigin="anonymous">
+
+
+<body>
+
+	<nav class="navbar navbar-light bg-dark">
+		<a class="navbar-brand text-white pb-2" href="#">Holos Technology
+			Test</a> <a type="button" class="btn btn-info" th:href="@{/stats}"
+			th:text="Stats"></a>
+	</nav>
+
+
+	<div class="row">
+		<div class="m-2 col-md-10">
+			<div class="alert alert-info" role="alert" th:if="${success != null}"
+				th:text="${success}"></div>
+			<div class="alert alert-danger" role="alert" th:if="${error != null}"
+				th:text="${error}"></div>
+
+			<form th:action="@{/ismutant}" method="GET">
+				<input type="text" class="form-control"
+					placeholder="Ingrese la cadena de ADN separada por comas" name="dna" />
+
+				<button type="submit" class="btn btn-info float-right mt-2">Enviar</button>
+			</form>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="ml-4 col-md-10" th:if="${count_mutant_dna != null}">
+
+			<div class="card text-center border-info mb-3" style="width: 18rem;">
+				<div class="card-body text-info">
+					<h5 class="card-title">Estadisticas</h5>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item" th:if="${count_mutant_dna != null}"
+						th:text="'Cout_human_dna: ' + ${count_mutant_dna}"></li>
+					<li class="list-group-item" th:if="${cout_human_dna != null}"
+						th:text="'Cout_human_dna: ' + ${cout_human_dna}"></li>
+					<li class="list-group-item" th:if="${ratio != null}"
+						th:text="'Ratio: ' + ${ratio}"></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
+		integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>
